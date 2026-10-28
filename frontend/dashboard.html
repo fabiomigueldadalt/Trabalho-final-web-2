@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#BD1010">
+  <title>Highway</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="logo logo-light">
+          <span class="logo-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 5.5A2.5 2.5 0 0 1 6.5 8H20"/></svg></span>
+          <div><strong>Highway</strong><small>Modern Class</small></div>
+        </div>
+        <button class="icon-button sidebar-close" id="sidebar-close"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+
+      <nav class="menu">
+        <span class="menu-label">MENU PRINCIPAL</span>
+        <button class="menu-item active" data-section="dashboard"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span><span>Visão geral</span></button>
+        <button class="menu-item" data-section="alunos"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.3"/><path d="M16 14.3c2.8.4 5 2.6 5 5.7"/></svg></span><span>Alunos</span></button>
+        <button class="menu-item" data-section="turmas"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 5.5A2.5 2.5 0 0 1 6.5 8H20"/></svg></span><span>Turmas</span></button>
+        <button class="menu-item" data-section="professores"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span><span>Professores</span></button>
+        <button class="menu-item" data-section="aulas"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1Z"/><path d="M8.5 12h7M8.5 16h5"/></svg></span><span>Aulas</span></button>
+        <button class="menu-item" data-section="calendario"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><span>Calendário</span></button>
+      </nav>
+
+      <div class="sidebar-profile">
+        <div class="avatar" id="sidebar-avatar">A</div>
+        <div>
+          <strong id="sidebar-name">Usuário</strong>
+          <small id="sidebar-role">Perfil</small>
+        </div>
+        <button class="icon-button" id="logout" title="Sair"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg></button>
+      </div>
+    </aside>
+
+    <div class="content-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button mobile-menu" id="mobile-menu"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <div>
+            <p class="breadcrumb">Highway / <span id="breadcrumb-page">Visão geral</span></p>
+            <h1 id="page-title">Visão geral</h1>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="desktop-search">
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+            <input id="global-search" placeholder="Pesquisar nesta página">
+          </div>
+          <button class="icon-button" id="theme-toggle" title="Alternar tema"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg></button>
+          <button class="btn btn-primary desktop-action" id="quick-new">+ Nova aula</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="page-section active" id="dashboard">
+          <div class="welcome-banner">
+            <div>
+              <span class="eyebrow">SEU PROGRESSO</span>
+              <h2 id="welcome-title">Boa tarde!</h2>
+              <p>Acompanhe seus dados e as próximas aulas.</p>
+            </div>
+            <div class="banner-paw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="100%" height="100%"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 5.5A2.5 2.5 0 0 1 6.5 8H20"/></svg></div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span class="stat-icon soft-green"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><circle cx="17" cy="9" r="2.3"/><path d="M16 14.3c2.8.4 5 2.6 5 5.7"/></svg></span>
+              <div><small>Alunos ativos</small><strong id="total-clientes">0</strong><span class="positive">Base cadastrada</span></div>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon soft-blue"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 5.5A2.5 2.5 0 0 1 6.5 8H20"/></svg></span>
+              <div><small>Turmas cadastradas</small><strong id="total-pets">0</strong><span class="positive">Turmas disponíveis</span></div>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon soft-purple"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+              <div><small>Professores</small><strong id="total-veterinarios">0</strong><span>Equipe docente</span></div>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon soft-orange"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1Z"/><path d="M8.5 12h7M8.5 16h5"/></svg></span>
+              <div><small>Aulas hoje</small><strong id="total-consultas-hoje">0</strong><span>Agenda do dia</span></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel chart-panel">
+              <div class="panel-header">
+                <div><h3>Aulas por mês</h3><p>Últimos seis meses</p></div>
+              </div>
+              <canvas id="monthly-chart" height="210"></canvas>
+            </article>
+
+            <article class="panel chart-panel">
+              <div class="panel-header">
+                <div><h3>Turmas por nível</h3><p>Distribuição atual</p></div>
+              </div>
+              <canvas id="species-chart" height="210"></canvas>
+            </article>
+          </div>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div><h3>Próximas aulas</h3><p>Aulas agendadas</p></div>
+              <button class="text-button" data-go="aulas">Ver agenda <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+            <div class="appointment-list" id="upcoming-list"></div>
+          </article>
+        </section>
+
+        <section class="page-section" id="alunos">
+          <div class="section-toolbar">
+            <div class="filter-group">
+              <input class="search-input" id="busca-clientes" placeholder="Pesquisar aluno por nome ou e-mail">
+            </div>
+            <button class="btn btn-primary" onclick="abrirCliente()">+ Novo aluno</button>
+          </div>
+          <div class="panel table-panel">
+            <div class="responsive-table">
+              <table>
+                <thead><tr><th>Aluno</th><th>Contato</th><th>Nível</th><th>Turmas</th><th>Ações</th></tr></thead>
+                <tbody id="lista-clientes"></tbody>
+              </table>
+            </div>
+            <div class="pagination" id="paginacao-clientes"></div>
+          </div>
+        </section>
+
+        <section class="page-section" id="turmas">
+          <div class="section-toolbar">
+            <div class="filter-group">
+              <input class="search-input" id="busca-pets" placeholder="Pesquisar turma ou nível">
+              <select id="filtro-especie"><option value="">Todos os públicos</option></select>
+            </div>
+            <button class="btn btn-primary" onclick="abrirPet()">+ Nova turma</button>
+          </div>
+          <div class="pet-grid" id="lista-pets"></div>
+          <div class="pagination standalone" id="paginacao-pets"></div>
+        </section>
+
+        <section class="page-section" id="professores">
+          <div class="section-toolbar">
+            <input class="search-input" id="busca-veterinarios" placeholder="Pesquisar professor ou especialidade">
+            <button class="btn btn-primary" onclick="abrirVeterinario()">+ Novo professor(a)</button>
+          </div>
+          <div class="doctor-grid" id="lista-veterinarios"></div>
+          <div class="pagination standalone" id="paginacao-veterinarios"></div>
+        </section>
+
+        <section class="page-section" id="aulas">
+          <div class="section-toolbar">
+            <div class="filter-group">
+              <input class="search-input" id="busca-consultas" placeholder="Pesquisar aula, turma ou professor">
+              <select id="filtro-status">
+                <option value="">Todos os status</option>
+                <option>Agendada</option>
+                <option>Concluída</option>
+                <option>Cancelada</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="abrirConsulta()">+ Nova aula</button>
+          </div>
+          <div class="panel table-panel">
+            <div class="responsive-table">
+              <table>
+                <thead><tr><th>Data e horário</th><th>Turma / Aluno</th><th>Professor</th><th>Conteúdo</th><th>Status</th><th>Ações</th></tr></thead>
+                <tbody id="lista-consultas"></tbody>
+              </table>
+            </div>
+            <div class="pagination" id="paginacao-consultas"></div>
+          </div>
+        </section>
+
+        <section class="page-section" id="calendario">
+          <div class="calendar-controls">
+            <button class="icon-button" id="prev-month"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <h2 id="calendar-title"></h2>
+            <button class="icon-button" id="next-month"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="calendar" id="calendar-grid"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <nav class="mobile-bottom-nav">
+    <button data-section="dashboard" class="active"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span><small>Início</small></button>
+    <button data-section="turmas"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 5.5A2.5 2.5 0 0 1 6.5 8H20"/></svg></span><small>Turmas</small></button>
+    <button data-section="aulas"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1Z"/><path d="M8.5 12h7M8.5 16h5"/></svg></span><small>Agenda</small></button>
+    <button data-section="calendario"><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></span><small>Calendário</small></button>
+  </nav>
+
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div><span class="eyebrow">Highway</span><h2 id="modal-title">Cadastro</h2></div>
+        <button class="icon-button" onclick="fecharModal()"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <form id="modal-form"></form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
